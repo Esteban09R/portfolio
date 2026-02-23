@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import { BadgeLink } from "../common/Badge";
-import { FaEnvelope, FaGit, FaGithub, FaLinkedin } from "react-icons/fa";
+import { BadgeLink } from "./Badge";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function HeroSection() {
   return (
@@ -19,14 +19,14 @@ export default function HeroSection() {
             Esteban Rolón
           </span>
           <span className="text-lg sm:text-xl font-semibold opacity-80">
-            Desarrollador Fullstack
+            Fullstack Developer
           </span>
         </div>
       </div>
       <p className="my-4 max-w-xl text-xl sm:text-2xl font-medium">
-        Desarrollo aplicaciones y sistemas enfocados en resolver
-        <span className="font-semibold text-accent"> necesidades reales</span>,
-        priorizando simplicidad, eficiencia y mantenibilidad.
+        I develop applications and systems focused on solving
+        <span className="font-semibold text-accent"> real needs</span>,
+        prioritizing simplicity, efficiency, and maintainability.
       </p>
       <div className="flex flex-wrap justify-center sm:justify-start gap-4">
         <BadgeLink

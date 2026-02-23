@@ -3,13 +3,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { LuLanguages } from "react-icons/lu";
 
-const handleContactMe = () => {
-  window.location.href = "mailto:rolonesteban@proton.me";
-};
-
 export default function Header() {
   const router = useRouter();
-
   return (
     <header
       className="
@@ -27,7 +22,7 @@ export default function Header() {
         className="flex
         items-center
         justify-center
-        w-[95%]
+        w-full
         sm:w-full
         max-w-xl
         h-full
@@ -47,26 +42,26 @@ export default function Header() {
           <ul className="flex items-center gap-6 sm:gap-12 text-sm sm:text-base">
             <li>
               <Link
-                href="#inicio"
+                href="#home"
                 className="text-foreground hover:text-secondary"
               >
-                Inicio
+                Home
               </Link>
             </li>
             <li>
               <Link
-                href="#proyectos"
+                href="#projects"
                 className="text-foreground hover:text-secondary"
               >
-                Proyectos
+                Projects
               </Link>
             </li>
             <li>
               <Link
-                href="#sobre-mi"
+                href="#about-me"
                 className="text-foreground hover:text-secondary"
               >
-                Sobre mí
+                About me
               </Link>
             </li>
             <li className="relative">
@@ -87,20 +82,20 @@ export default function Header() {
                   hover:cursor-pointer
                   hover:shadow-[0_0_100px_currentColor]
                 "
-                href="#contacto"
+                href="#contact"
               >
-                <span className="text-foreground">Contacto</span>
+                <span className="text-foreground">Contact</span>
               </Link>
             </li>
             <li>
               <button
                 className="flex flex-row items-center gap-1 hover:cursor-pointer p-1"
                 onClick={() => {
-                  localStorage.setItem("lang", "en");
-                  router.push("/en");
+                  localStorage.setItem("lang", "es");
+                  router.push("/es");
                 }}
               >
-                <span className="text-foreground/50">ES</span>
+                <span className="text-foreground/50">EN</span>
                 <LuLanguages />
               </button>
             </li>

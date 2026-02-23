@@ -1,17 +1,19 @@
 "use client";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+
 const handleSendEmail = () => {
   window.location.href = "mailto:rolonesteban@proton.me";
 };
-import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+
 export default function Footer() {
   return (
     <footer
-      id="contacto"
+      id="contact"
       className="bg-background p-4 text-foreground flex flex-col gap-4 items-center mb-8 py-12"
     >
       <div className="w-full max-w-4xl flex flex-col gap-4 items-left">
-        <h5 className="text-4xl font-bold mb-4">Contacto</h5>
-        <p>Sigamos en contacto a traves de mis redes:</p>
+        <h5 className="text-4xl font-bold mb-4">Contact</h5>
+        <p>Let's keep in touch through my social networks:</p>
         <ul className="flex gap-4">
           <li>
             <a
@@ -34,17 +36,16 @@ export default function Footer() {
             </a>
           </li>
         </ul>
-        <p>Enviame un e-mail a mi correo personal: </p>
+        <p>Send me an email to my personal address: </p>
         <button
           onClick={handleSendEmail}
           className="flex gap-2 items-center hover:cursor-pointer hover:text-secondary"
         >
           <FaEnvelope />
-          Enviar Correo Electronico
+          Send Email
         </button>
         <p className="text-center mt-4 text-sm">
-          © {new Date().getFullYear()} Esteban Rolón. Todos los derechos
-          reservados.
+          © {new Date().getFullYear()} Esteban Rolón. All rights reserved.
         </p>
       </div>
     </footer>
