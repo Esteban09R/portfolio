@@ -1,9 +1,14 @@
-"use client";
 import Image from "next/image";
-import { BadgeLink } from "./Badge";
+import { BadgeLink } from "@/components/common/BadgeLinik";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 
-export default function HeroSection() {
+export default function HeroSection({
+  children,
+  description,
+}: {
+  children: React.ReactNode;
+  description: string;
+}) {
   return (
     <div className="flex flex-col gap-4 items-center sm:items-start text-center sm:text-left">
       <div className="flex flex-col sm:flex-row items-center gap-4">
@@ -19,15 +24,11 @@ export default function HeroSection() {
             Esteban Rolón
           </span>
           <span className="text-lg sm:text-xl font-semibold opacity-80">
-            Fullstack Developer
+            {description}
           </span>
         </div>
       </div>
-      <p className="my-4 max-w-xl text-xl sm:text-2xl font-medium">
-        I develop applications and systems focused on solving
-        <span className="font-semibold text-accent"> real needs</span>,
-        prioritizing simplicity, efficiency, and maintainability.
-      </p>
+      {children}
       <div className="flex flex-wrap justify-center sm:justify-start gap-4">
         <BadgeLink
           label="E-mail"

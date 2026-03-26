@@ -11,6 +11,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Esteban Rolón",
   description: "Desarrollador Fullstack",
+  icons: {
+    icon: "/dan.ico",
+  },
 };
 
 export default function RootLayout({
