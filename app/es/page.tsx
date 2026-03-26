@@ -25,14 +25,13 @@ export default function Page() {
         contactLabel="Contacto"
         contactLink="#Contacto"
       />
-      <div className="flex flex-col items-center mx-6" id="inicio">
+      <div className="flex flex-col items-center mx-6 mt-16" id="inicio">
         <div className="w-full max-w-4xl mt-26">
           <section>
             <HeroSection description="Desarrollador Fullstack">
               <p className="my-4 max-w-xl text-xl sm:text-2xl font-medium">
-                Desarrollo aplicaciones y sistemas enfocados en resolver
+                Desarrollo aplicaciones y sistemas enfocados en resolver{" "}
                 <span className="font-semibold text-accent">
-                  {" "}
                   necesidades reales
                 </span>
                 , priorizando la simplicidad, eficiencia y mantenibilidad.
@@ -93,10 +92,10 @@ export default function Page() {
               title="Sobre mí"
               id="sobre-mi"
               paragraphs={[
-                "Soy técnico en informática y extremadamente curioso: no puedo quedarme con el 'funciona así', siempre necesito entender el porqué. Desde chico desarmaba dispositivos por pura curiosidad de saber cómo funcionaban.",
-                "Uso Linux por elección y Arch Linux por capricho: la personalización extrema me permite decir que este sistema es realmente mío. Cada parte está ahí porque la elegí.",
+                "Soy un desarrollador de 19 años apasionado por la eficiencia y la arquitectura de sistemas. Mi día a día transcurre en un entorno Arch Linux altamente personalizado, donde la optimización no es un hobby, sino un estándar.",
+                "Actualmente, me desempeño en el sector bancario liderando un equipo operativo de digitalización de datos. Aunque mi rol principal es la gestión estratégica y el flujo de información, utilizo mi pasión por la programación para entender y mejorar cómo interactuamos con la tecnología.",
               ]}
-              conclusion="Me encanta crear software porque soy creativo, me gusta experimentar, hacer de todo y compartir lo que construyo para que sea útil para otras personas."
+              conclusion="Mi enfoque técnico personal se centra en el ecosistema de Rust y Tauri para aplicaciones de alto rendimiento, y en Next.js para interfaces modernas. Busco fusionar mi experiencia liderando equipos en el mundo real con mi capacidad técnica para construir herramientas digitales sólidas y estéticas."
               image="/desktop.png"
               imageAlt="Imagen ilustrativa de mi sistema operativo"
             />

@@ -25,7 +25,7 @@ export default function Page() {
         contactLabel="Contact me"
         contactLink="#Contact me"
       />
-      <div className="flex flex-col items-center mx-6" id="home">
+      <div className="flex flex-col items-center mx-6 mt-16" id="home">
         <div className="w-full max-w-4xl mt-26">
           <section>
             <HeroSection description="Fullstack Developer">
@@ -87,10 +87,10 @@ export default function Page() {
             <AboutMe
               title="About me"
               paragraphs={[
-                "I am a computer technician and extremely curious: I cannot just accept that something 'works this way,' I always need to understand why. Since I was a child, I disassembled devices out of pure curiosity to know how they worked.",
-                "I use Linux by choice and Arch Linux by whim: the extreme customization allows me to say that this system is truly mine. Every part is there because I chose it.",
+                "I am a 19-year-old developer passionate about efficiency and systems architecture. My daily workflow takes place in a highly customized Arch Linux environment, where optimization isn't just a hobby—it's a standard.",
+                "Currently, I work in the banking sector leading a Data Digitalization operations team. While my primary role focuses on strategic management and information flow, I leverage my passion for programming to understand and improve how we interact with technology.",
               ]}
-              conclusion="I love creating software because I am creative, I like to experiment, do everything, and share what I build so that it is useful for other people."
+              conclusion="My personal technical focus is centered on the Rust and Tauri ecosystem for high-performance applications, alongside Next.js for modern interfaces. I aim to merge my real-world team leadership experience with my technical skills to build robust, aesthetic digital tools."
               image="/desktop.png"
               imageAlt="Illustrative image of my operating system"
             />

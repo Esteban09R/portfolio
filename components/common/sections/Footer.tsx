@@ -22,9 +22,9 @@ export default function Footer({
   return (
     <footer
       id={title}
-      className="bg-background text-foreground flex flex-col gap-4 py-4 mt-32"
+      className="bg-background text-foreground flex flex-col gap-4 py-4 mt-32 w-full"
     >
-      <div className="w-full max-w-4xl flex flex-col gap-8 items-center">
+      <div className="w-full flex flex-col gap-8 items-center">
         <h5 className="text-4xl font-bold py-4">{title}</h5>
         <div className="flex flex-col gap-4 items-center">
           <p className="font-semibold">{description}</p>

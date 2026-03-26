@@ -22,7 +22,7 @@ export default function AboutMe({
       </h2>
 
       {/* Part with image */}
-      <div className="grid grid-cols-1 md:grid-cols-[1fr_500px] gap-8 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_500px] gap-8 items-center justify-center">
         <div className="space-y-6">
           {paragraphs.map((paragraph, index) => (
             <p key={index}>{paragraph}</p>
