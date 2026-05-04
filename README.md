@@ -1,4 +1,5 @@
 # Esteban's Portfolio
+
 a
 Hi! I'm **Esteban**, and this is my personal portfolio built with a focus on simplicity and modern aesthetics.
 
@@ -19,3 +20,4 @@ Hi! I'm **Esteban**, and this is my personal portfolio built with a focus on sim
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
 - **Icons**: [React Icons](https://react-icons.github.io/react-icons/)
+- **Deployment**: [Cloudflare Pages](https://pages.cloudflare.com/)
