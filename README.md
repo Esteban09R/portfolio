@@ -16,8 +16,44 @@ Hi! I'm **Esteban**, and this is my personal portfolio built with a focus on sim
 
 ## 🛠 Tech Stack
 
+- **Runtime**: [Bun](https://bun.sh/)
 - **Framework**: [Next.js 15+](https://nextjs.org/)
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
 - **Icons**: [React Icons](https://react-icons.github.io/react-icons/)
 - **Deployment**: [Cloudflare Pages](https://pages.cloudflare.com/)
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- [Bun](https://bun.sh/) (latest version)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Esteban09R/portfolio.git
+   cd portfolio
+   ```
+
+2. Install dependencies:
+   ```bash
+   bun install
+   ```
+
+3. Run the development server:
+   ```bash
+   bun run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 📜 Available Scripts
+
+- `bun run dev` - Start the development server
+- `bun run build` - Build the project for production
+- `bun run start` - Start the production server
+- `bun run lint` - Run ESLint
+- `bun run deploy` - Deploy to Cloudflare Pages
+- `bun run preview` - Preview the Cloudflare build

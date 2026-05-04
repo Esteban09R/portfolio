@@ -2,13 +2,14 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "bun@1.1.0",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint",
-    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
-    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview"
+    "dev": "bun run next dev",
+    "build": "bun run next build",
+    "start": "bun run next start",
+    "lint": "bun run eslint",
+    "deploy": "bun run opennextjs-cloudflare build && bun run opennextjs-cloudflare deploy",
+    "preview": "bun run opennextjs-cloudflare build && bun run opennextjs-cloudflare preview"
   },
   "dependencies": {
     "@react-pdf/renderer": "^4.5.1",
