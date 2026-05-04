@@ -74,7 +74,7 @@ export const CV_DATA = {
       name: "v0id coffee",
       technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS v4"],
       description:
-        "Conceptual landing page focused on demonstrating high level of customization and visual quality within personalized solutions. V0id coffee is a fictional coffee brand focusing on \"night owls\".\n• Development of a high-performance interface with Next.js (App Router), priorizando modularidad mediante componentes reutilizables.\n• Custom UI/UX design with \"terminal\" aesthetic (dark + neon).\n• Implementation of glassmorphism effects and custom animations.",
+        "Conceptual landing page focused on demonstrating high level of customization and visual quality within personalized solutions. V0id coffee is a fictional coffee brand focusing on \"night owls\".\n• Development of a high-performance interface with Next.js (App Router), prioritizing modularity through reusable components.\n• Custom UI/UX design with \"terminal\" aesthetic (dark + neon).\n• Implementation of glassmorphism effects and custom animations.",
       link: PROFILE.projects.v0idCoffee.webpage.replace('https://', ''),
     },
   ],
