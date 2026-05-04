@@ -576,7 +576,7 @@ export const CVDocument = ({
                 <Text style={styles.expRole}>{exp.role}</Text>
                 <Text
                   style={
-                    exp.period.toLowerCase().includes("presente")
+                    exp.period.toLowerCase().includes("presente") || exp.period.toLowerCase().includes("present")
                       ? styles.periodBadge
                       : styles.periodBadgePast
                   }
@@ -635,7 +635,7 @@ export const CVDocument = ({
                 <Text style={styles.eduDegree}>{edu.degree}</Text>
                 <Text
                   style={
-                    edu.period.toLowerCase().includes("presente")
+                    edu.period.toLowerCase().includes("presente") || edu.period.toLowerCase().includes("present")
                       ? styles.periodBadge
                       : styles.periodBadgePast
                   }
