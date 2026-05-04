@@ -25,7 +25,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${poppins.className} antialiased text-[1rem]`}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                document.documentElement.style.visibility = 'hidden';
+                window.addEventListener('DOMContentLoaded', function() {
+                  document.documentElement.style.visibility = 'visible';
+                });
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body
+        style={{ backgroundColor: "#180e0d" }}
+        className={`${poppins.className} antialiased text-[1rem]`}
+      >
         {children}
       </body>
     </html>

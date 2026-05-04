@@ -1,7 +1,7 @@
 export const PROFILE = {
   name: "Esteban Rolon",
   role: "Tecnico en Informatica",
-  website: "https://reidan.dev",
+  website: "https://portfolio.reidan.dev",
   profile: "/profile.jpg",
   social: {
     github: "https://github.com/Esteban09R",
