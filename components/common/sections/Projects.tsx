@@ -61,7 +61,7 @@ export default function Projects({
       </div>
 
       <div className="w-full md:w-[60%] p-6 md:p-10 flex flex-col items-center md:items-start text-center md:text-left justify-center z-10">
-        <h2 className="text-3xl font-bold text-primary mb-2 leading-tight">
+        <h2 className="text-3xl font-extrabold uppercase text-accent mb-2 leading-tight">
           {title}
         </h2>
         <p className="text-foreground/80 text-sm md:text-base leading-relaxed mb-4 max-w-[90%]">

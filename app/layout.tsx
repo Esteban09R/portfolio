@@ -8,8 +8,10 @@ const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700", "900"],
 });
 
+import { PROFILE } from "@/constants/profile";
+
 export const metadata: Metadata = {
-  title: "Esteban Rolón",
+  title: PROFILE.name,
   description: "Desarrollador Fullstack",
   icons: {
     icon: "/dan.ico",
@@ -22,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${poppins.className} antialiased text-[1rem]`}>
         {children}
       </body>

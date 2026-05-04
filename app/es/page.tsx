@@ -13,28 +13,36 @@ import {
 import Header from "@/components/common/sections/Header";
 import Footer from "@/components/common/sections/Footer";
 
+import { PROFILE } from "@/constants/profile";
+import { PAGE_DATA } from "./pageData";
+import Language from "@/components/common/Language";
+
 export default function Page() {
+  const p = PROFILE.projects;
+  const d = PAGE_DATA;
+
   return (
     <>
       <Header
-        pages={[
-          { label: "inicio", href: "#inicio" },
-          { label: "proyectos", href: "#proyectos" },
-          { label: "sobre-mi", href: "#sobre-mi" },
-        ]}
-        contactLabel="Contacto"
-        contactLink="#Contacto"
+        pages={d.nav}
+        contactLabel={d.contact.label}
+        contactLink={`#${d.contact.label}`}
       />
       <div className="flex flex-col items-center mx-6 mt-16" id="inicio">
-        <div className="w-full max-w-4xl mt-26">
+        <div className="fixed top-0 right-0 translate-y-[85dvh] translate-x-38 hover:translate-x-12 z-50 transition-all md:hidden">
+          <div className="bg-background/50 backdrop-blur-md backdrop-brightness-125 backdrop-contrast-110 p-4 rounded-full border border-foreground pr-16">
+            <Language target="" />
+          </div>
+        </div>
+        <div className="relative w-full max-w-4xl mt-26">
           <section>
-            <HeroSection description="Desarrollador Fullstack">
+            <HeroSection description={d.hero.description}>
               <p className="my-4 max-w-xl text-xl sm:text-2xl font-medium">
-                Desarrollo aplicaciones y sistemas enfocados en resolver{" "}
+                {d.hero.text}
                 <span className="font-semibold text-accent">
-                  necesidades reales
+                  {d.hero.highlight}
                 </span>
-                , priorizando la simplicidad, eficiencia y mantenibilidad.
+                {d.hero.conclusion}
               </p>
             </HeroSection>
           </section>
@@ -42,24 +50,18 @@ export default function Page() {
           {/* PROYECTOS */}
           <section className="mt-32 flex flex-col gap-4">
             <h2 className="text-4xl font-bold pb-16" id="proyectos">
-              Proyectos
+              {d.projects.sectionTitle}
             </h2>
 
             <Projects
-              title="V0id Coffee landing page"
-              description="Landing page para una cafetería orientada a noctámbulos y programadores, con una estética de 'terminal' con glassmorphism moderno, un tema oscuro que recuerda a una terminal y animaciones fluidas."
-              image="/v0id-coffee.png"
-              webpage="https://v0id-coffee.vercel.app/"
-              github="https://github.com/Esteban09R/v0id-coffee"
-              githubLabel="Ver en GitHub"
-              webpageLabel="Visitar web"
-              name={[
-                "Next.js",
-                "TypeScript",
-                "Tailwind CSS",
-                "Framer Motion",
-                "Resend",
-              ]}
+              title={d.projects.v0idCoffee.title}
+              description={d.projects.v0idCoffee.description}
+              image={d.projects.v0idCoffee.image}
+              webpage={p.v0idCoffee.webpage}
+              github={p.v0idCoffee.github}
+              githubLabel={d.projects.v0idCoffee.githubLabel}
+              webpageLabel={d.projects.v0idCoffee.webpageLabel}
+              name={d.projects.v0idCoffee.technologies}
               icons={[
                 <SiNextdotjs key={0} />,
                 <SiTypescript key={1} />,
@@ -70,12 +72,12 @@ export default function Page() {
             />
 
             <Projects
-              title="Blance"
-              description="Blance es una aplicación de gestión de presupuesto enfocada en la simplicidad, el control y el uso sin conexión. Fue diseñada como una alternativa minimalista a las aplicaciones financieras sobrecargadas con funciones innecesarias y publicidad intrusiva."
-              image="/blance.png"
-              github="https://github.com/Esteban09R/blance"
-              githubLabel="Ver en GitHub"
-              name={["Rust", "Tauri", "Next.js", "TypeScript", "Tailwind CSS"]}
+              title={d.projects.blance.title}
+              description={d.projects.blance.description}
+              image={d.projects.blance.image}
+              github={p.blance.github}
+              githubLabel={d.projects.blance.githubLabel}
+              name={d.projects.blance.technologies}
               icons={[
                 <SiRust key={0} />,
                 <SiTauri key={1} />,
@@ -83,31 +85,28 @@ export default function Page() {
                 <SiTypescript key={3} />,
                 <SiTailwindcss key={4} />,
               ]}
-              inDevelopment="Actualmente en desarrollo"
+              inDevelopment={d.projects.blance.inDevelopment}
             />
           </section>
 
           <section className="mt-32 text-lg max-w-6xl mx-auto">
             <AboutMe
-              title="Sobre mí"
+              title={d.about.title}
               id="sobre-mi"
-              paragraphs={[
-                "Soy un desarrollador de 19 años apasionado por la eficiencia y la arquitectura de sistemas. Mi día a día transcurre en un entorno Arch Linux altamente personalizado, donde la optimización no es un hobby, sino un estándar.",
-                "Actualmente, me desempeño en el sector bancario liderando un equipo operativo de digitalización de datos. Aunque mi rol principal es la gestión estratégica y el flujo de información, utilizo mi pasión por la programación para entender y mejorar cómo interactuamos con la tecnología.",
-              ]}
-              conclusion="Mi enfoque técnico personal se centra en el ecosistema de Rust y Tauri para aplicaciones de alto rendimiento, y en Next.js para interfaces modernas. Busco fusionar mi experiencia liderando equipos en el mundo real con mi capacidad técnica para construir herramientas digitales sólidas y estéticas."
-              image="/desktop.png"
-              imageAlt="Imagen ilustrativa de mi sistema operativo"
+              paragraphs={d.about.paragraphs}
+              conclusion={d.about.conclusion}
+              image={d.about.image}
+              imageAlt={d.about.imageAlt}
             />
           </section>
         </div>
       </div>
       <Footer
-        title="Contacto"
-        description="Sigamos en contacto a traves de mis redes:"
-        email="Enviame un e-mail a mi correo personal: "
-        emailBadge="Enviar Correo Electronico"
-        copyright="Esteban Rolón. Todos los derechos reservados."
+        title={d.footer.title}
+        description={d.footer.description}
+        emailBadge={d.footer.emailBadge}
+        orLabel={d.footer.orLabel}
+        copyright={d.footer.copyright}
       />
     </>
   );

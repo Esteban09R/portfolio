@@ -1,43 +1,68 @@
 "use client";
 import { usePathname, useRouter } from "next/navigation";
+import { IoLanguage } from "react-icons/io5";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-export default function Language() {
+export default function Language(props: { target: string }) {
   const pathname = usePathname() || "";
-  const [currentLang, setCurrentLang] = useState(
-    pathname.includes("/es") ? "es" : "en",
-  );
-
-  useEffect(() => {
-    // Sync state if pathname changes (e.g. from external logic)
-    setCurrentLang(pathname.includes("/es") ? "es" : "en");
-  }, [pathname]);
-
+  const currentLang = pathname.includes("/es") ? "es" : "en";
   const router = useRouter();
+
+  // Local state to ensure animation plays before redirect
+  const [displayLang, setDisplayLang] = useState(currentLang);
+
+  // Keep display state in sync with URL
+  useEffect(() => {
+    setDisplayLang(currentLang);
+  }, [currentLang]);
+
+  const handleToggle = () => {
+    const nextLang = currentLang === "es" ? "en" : "es";
+
+    // 1. Trigger local animation first
+    setDisplayLang(nextLang);
+
+    // 2. Wait for animation to finish before jumping to next page
+    setTimeout(() => {
+      localStorage.setItem("lang", nextLang);
+      router.push("/" + nextLang + "/" + props.target);
+    }, 400); // Wait for the spring animation (approx 300-400ms)
+  };
+
   return (
-    <button
-      className="hover:cursor-pointer"
-      onClick={() => {
-        if (currentLang === "es") {
-          localStorage.setItem("lang", "en");
-          setCurrentLang("en");
-          router.push("/en");
-        } else {
-          localStorage.setItem("lang", "es");
-          setCurrentLang("es");
-          router.push("/es");
-        }
-      }}
-    >
-      <span className="relative flex flex-row items-center gap-4 bg-transparent border border-primary p-1.5 rounded-full transition-all duration-300">
-        <span className="text-foreground/50">ES</span>
-        <span className="text-foreground/50">EN</span>
-        <span
-          className={`absolute top-0 left-0 w-1/2 h-full -z-10 flex items-center justify-center transition-transform duration-300 ${currentLang === "es" ? "translate-x-0" : "translate-x-full"}`}
-        >
-          <span className="bg-primary rounded-full h-6 w-6"></span>
-        </span>
+    <div className="flex flex-row items-center gap-2">
+      <span className="p-2 bg-primary/20 border border-primary rounded-full">
+        <IoLanguage className="text-foreground" />
       </span>
-    </button>
+      <button
+        className="hover:cursor-pointer relative overflow-hidden rounded-full border border-primary/20 bg-background/50 backdrop-blur-sm p-1"
+        onClick={handleToggle}
+      >
+        <div className="relative flex flex-row items-center gap-6 px-3 py-2 text-[10px] font-bold tracking-tighter sm:tracking-normal z-10 mt-px">
+          <span
+            className={`transition-colors duration-300 ${displayLang === "es" ? "text-primary-foreground" : "text-foreground/50"}`}
+          >
+            ES
+          </span>
+          <span
+            className={`transition-colors duration-300 ${displayLang === "en" ? "text-primary-foreground" : "text-foreground/50"}`}
+          >
+            EN
+          </span>
+        </div>
+
+        {/* Animated indicator */}
+        <motion.div
+          className="absolute top-1 bottom-1 w-[calc(50%-4px)] bg-primary rounded-full z-0 shadow-md"
+          initial={false}
+          animate={{
+            x: displayLang === "es" ? 0 : "100%",
+            left: 4,
+          }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        />
+      </button>
+    </div>
   );
 }

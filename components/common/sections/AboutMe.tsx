@@ -17,25 +17,28 @@ export default function AboutMe({
 }) {
   return (
     <>
-      <h2 className="text-4xl font-bold mb-16" id={id}>
+      <h2
+        id={id}
+        className="text-4xl font-bold mb-16 text-center md:text-start"
+      >
         {title}
       </h2>
 
-      {/* Part with image */}
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_500px] gap-8 items-center justify-center">
-        <div className="space-y-6">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_500px] gap-8 items-center">
+        {/* Paragraphs are left-aligned for better readability */}
+        <div className="space-y-6 text-left">
           {paragraphs.map((paragraph, index) => (
             <p key={index}>{paragraph}</p>
           ))}
         </div>
 
-        <figure>
+        <figure className="flex flex-col items-center">
           <Image
             src={image}
             alt={imageAlt}
             width={1000}
             height={1000}
-            className="rounded-lg"
+            className="rounded-lg shadow-lg"
           />
           <figcaption className="text-sm text-foreground/80 mt-2 text-center">
             {imageAlt}
@@ -43,8 +46,8 @@ export default function AboutMe({
         </figure>
       </div>
 
-      <div className="mt-6 space-y-6">
-        <p>{conclusion}</p>
+      <div className="mt-8 text-left">
+        <p className="text-lg">{conclusion}</p>
       </div>
     </>
   );

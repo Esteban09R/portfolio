@@ -2,13 +2,14 @@ type BadgeLinkProps = {
   label: string;
   href?: string;
   icon?: React.ReactNode;
+  target?: string;
 };
 
-export function BadgeLink({ label, href, icon }: BadgeLinkProps) {
+export function BadgeLink({ label, href, icon, target = "_blank" }: BadgeLinkProps) {
   return (
     <a
       href={href}
-      target="_blank"
+      target={target}
       rel="noopener noreferrer"
       className="
         inline-flex items-center

@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { BadgeLink } from "@/components/common/BadgeLinik";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import { PROFILE } from "@/constants/profile";
+import { PRIVATE_PROFILE } from "@/constants/private-profile";
 
 export default function HeroSection({
   children,
@@ -9,11 +11,12 @@ export default function HeroSection({
   children: React.ReactNode;
   description: string;
 }) {
+
   return (
     <div className="flex flex-col gap-4 items-center sm:items-start text-center sm:text-left">
       <div className="flex flex-col sm:flex-row items-center gap-4">
         <Image
-          src="/profile.webp"
+          src={PROFILE.profile}
           alt="Profile"
           width={100}
           height={100}
@@ -21,7 +24,7 @@ export default function HeroSection({
         />
         <div className="flex flex-col">
           <span className="text-3xl sm:text-4xl font-extrabold">
-            Esteban Rolón
+            {PROFILE.name}
           </span>
           <span className="text-lg sm:text-xl font-semibold opacity-80">
             {description}
@@ -30,21 +33,23 @@ export default function HeroSection({
       </div>
       {children}
       <div className="flex flex-wrap justify-center sm:justify-start gap-4">
-        <BadgeLink
-          label="E-mail"
-          icon={<FaEnvelope />}
-          href="mailto:rolonesteban@proton.me"
-        ></BadgeLink>
+        {process.env.NODE_ENV !== "production" && (
+          <BadgeLink 
+            label="E-mail" 
+            icon={<FaEnvelope />} 
+            href={`mailto:${PRIVATE_PROFILE.email}`} 
+          />
+        )}
         <BadgeLink
           label="LinkedIn"
           icon={<FaLinkedin />}
-          href="https://linkedin.com/in/estebanrolon09"
-        ></BadgeLink>
+          href={PROFILE.social.linkedin}
+        />
         <BadgeLink
           label="GitHub"
           icon={<FaGithub />}
-          href="https://github.com/Esteban09R"
-        ></BadgeLink>
+          href={PROFILE.social.github}
+        />
       </div>
     </div>
   );
