@@ -30,11 +30,11 @@ export default function Page() {
       />
       <div className="flex flex-col items-center mx-6 mt-16" id="home">
         <div className="relative w-full max-w-4xl mt-26">
-        <div className="fixed top-0 right-0 translate-y-[85dvh] translate-x-38 hover:translate-x-12 z-50 transition-all md:hidden">
-          <div className="bg-background/50 backdrop-blur-md backdrop-brightness-125 backdrop-contrast-110 p-4 rounded-full border border-foreground pr-16">
-            <Language target="" />
+          <div className="fixed top-0 right-0 translate-y-[85dvh] translate-x-38 hover:translate-x-12 z-50 transition-all md:hidden">
+            <div className="bg-background/50 backdrop-blur-md backdrop-brightness-125 backdrop-contrast-110 p-4 rounded-full border border-foreground pr-16">
+              <Language target="" />
+            </div>
           </div>
-        </div>
           <section>
             <HeroSection description={d.hero.description}>
               <p className="my-4 max-w-xl text-xl sm:text-2xl font-medium">
@@ -49,7 +49,10 @@ export default function Page() {
 
           {/* PROJECTS */}
           <section className="mt-32 flex flex-col gap-4">
-            <h2 className="text-4xl font-bold pb-16" id="projects">
+            <h2
+              className="text-4xl font-bold pb-16 text-center md:text-start"
+              id="projects"
+            >
               {d.projects.sectionTitle}
             </h2>
 
