@@ -4,12 +4,12 @@ import { PRIVATE_PROFILE } from "@/constants/private-profile";
 export const CV_DATA = {
   name: PROFILE.name,
   image: PROFILE.profile,
-  role: "Técnico en Informática",
+  role: "Desarrollador Fullstack",
   contact: {
     email: PRIVATE_PROFILE.email,
     phone: PRIVATE_PROFILE.phone,
     location: PRIVATE_PROFILE.location,
-    website: PROFILE.website.replace('https://', ''),
+    website: PROFILE.website.replace("https://", ""),
     linkedin: PROFILE.social.linkedin,
     github: PROFILE.social.github,
   },
@@ -33,11 +33,12 @@ export const CV_DATA = {
   ],
   skills: {
     technical: [
-      "React",
       "Next.js",
-      "Tailwind",
-      "HTML/CSS",
+      "React",
       "JavaScript/TypeScript",
+      "Tailwind",
+      "Framer Motion",
+      "HTML/CSS",
       "Python",
       "PHP",
       "SQL (PostgreSQL)",
@@ -75,7 +76,7 @@ export const CV_DATA = {
       technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS v4"],
       description:
         'Landing page conceptual enfocada en demostrar alto nivel de personalización y calidad visual dentro de soluciones personalizadas. V0id coffee es una marca ficticia de cafetería que se enfoca en los "night owls".\n• Desarrollo de una interfaz de alto rendimiento con Next.js (App Router), priorizando la modularidad mediante componentes reutilizables.\n• Diseño UI/UX custom con estética "terminal" (dark + neon).\n• Implementación de efectos glassmorphism y animaciones personalizadas.',
-      link: PROFILE.projects.v0idCoffee.webpage.replace('https://', ''),
+      link: PROFILE.projects.v0idCoffee.webpage.replace("https://", ""),
     },
   ],
 };

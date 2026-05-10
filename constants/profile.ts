@@ -1,6 +1,6 @@
 export const PROFILE = {
   name: "Esteban Rolon",
-  role: "Tecnico en Informatica",
+  role: "Fullstack Developer",
   website: "https://portfolio.reidan.dev",
   profile: "/profile.jpg",
   social: {
