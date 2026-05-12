@@ -26,9 +26,9 @@ export default function Page() {
       <Header
         pages={d.nav}
         contactLabel={d.contact.label}
-        contactLink={`#${d.contact.label}`}
+        contactLink={`#${d.contact.id}`}
       />
-      <div className="flex flex-col items-center mx-6 mt-16" id="inicio">
+      <div className="flex-1 flex flex-col items-center mx-6 mt-16" id="inicio">
         <div className="fixed top-0 right-0 translate-y-[85dvh] translate-x-38 hover:translate-x-12 z-50 transition-all md:hidden">
           <div className="bg-background/50 backdrop-blur-md backdrop-brightness-125 backdrop-contrast-110 p-4 rounded-full border border-foreground pr-16">
             <Language target="" />
@@ -36,8 +36,12 @@ export default function Page() {
         </div>
         <div className="relative w-full max-w-4xl mt-26">
           <section>
-            <HeroSection description={d.hero.description}>
-              <p className="my-4 max-w-xl text-xl sm:text-2xl font-medium">
+            <HeroSection
+              description={d.hero.description}
+              contactLabel={d.contact.label}
+              contactHref={`#${d.contact.id}`}
+            >
+              <p className="my-4 max-w-4/5 text-xl sm:text-2xl font-medium text-balance">
                 {d.hero.text}
                 <span className="font-semibold text-accent">
                   {d.hero.highlight}
@@ -49,7 +53,10 @@ export default function Page() {
 
           {/* PROYECTOS */}
           <section className="mt-32 flex flex-col gap-4">
-            <h2 className="text-4xl font-bold pb-16" id="proyectos">
+            <h2
+              className="text-4xl font-bold pb-16 text-center md:text-left"
+              id="proyectos"
+            >
               {d.projects.sectionTitle}
             </h2>
 
@@ -102,10 +109,10 @@ export default function Page() {
         </div>
       </div>
       <Footer
+        id={d.contact.id}
         title={d.footer.title}
         description={d.footer.description}
-        emailBadge={d.footer.emailBadge}
-        orLabel={d.footer.orLabel}
+        formLabels={d.footer.formLabels}
         copyright={d.footer.copyright}
       />
     </>

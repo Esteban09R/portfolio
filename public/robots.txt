@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /api/cv
+Disallow: /en/cv
+Disallow: /es/cv
+Disallow: /en/cv2
+Disallow: /es/cv2
+
+Sitemap: https://portfolio.reidan.dev/sitemap.xml

@@ -39,11 +39,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body
-        style={{ backgroundColor: "#180e0d" }}
-        className={`${poppins.className} antialiased text-[1rem]`}
-      >
+      <body className={`${poppins.className} antialiased text-[1rem]`}>
         {children}
+        <div className="bg-grid fixed top-0 right-0 w-full h-full -z-50 border-0 bg-radial-gradient(circle, var(--"></div>
       </body>
     </html>
   );

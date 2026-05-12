@@ -41,12 +41,19 @@ export const PAGE_DATA = {
   },
   footer: {
     title: "Contacto",
-    description: "Sigamos en contacto a través de mis redes:",
-    emailBadge: "Enviar Correo Electrónico",
-    orLabel: "o",
+    description: "Sigamos en contacto a través de mis redes o enviándome un mensaje directo:",
+    formLabels: {
+      name: "Nombre",
+      email: "Correo electrónico",
+      message: "Mensaje",
+      send: "Enviar mensaje",
+      success: "¡Mensaje enviado con éxito!",
+      error: "Hubo un error al enviar el mensaje.",
+    },
     copyright: "Esteban Rolón. Todos los derechos reservados.",
   },
   contact: {
     label: "Contacto",
+    id: "contacto",
   },
 };

@@ -2,16 +2,18 @@ import Image from "next/image";
 import { BadgeLink } from "@/components/common/BadgeLinik";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import { PROFILE } from "@/constants/profile";
-import { PRIVATE_PROFILE } from "@/constants/private-profile";
 
 export default function HeroSection({
   children,
   description,
+  contactLabel,
+  contactHref,
 }: {
   children: React.ReactNode;
   description: string;
+  contactLabel: string;
+  contactHref: string;
 }) {
-
   return (
     <div className="flex flex-col gap-4 items-center sm:items-start text-center sm:text-left">
       <div className="flex flex-col sm:flex-row items-center gap-4">
@@ -33,13 +35,12 @@ export default function HeroSection({
       </div>
       {children}
       <div className="flex flex-wrap justify-center sm:justify-start gap-4">
-        {process.env.NODE_ENV !== "production" && (
-          <BadgeLink 
-            label="E-mail" 
-            icon={<FaEnvelope />} 
-            href={`mailto:${PRIVATE_PROFILE.email}`} 
-          />
-        )}
+        <BadgeLink
+          label={contactLabel}
+          icon={<FaEnvelope />}
+          href={contactHref}
+          target="_self"
+        />
         <BadgeLink
           label="LinkedIn"
           icon={<FaLinkedin />}

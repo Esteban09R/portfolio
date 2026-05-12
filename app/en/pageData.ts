@@ -50,12 +50,20 @@ export const PAGE_DATA = {
   },
   footer: {
     title: "Contact me",
-    description: "Let's keep in touch through my social networks:",
-    emailBadge: "Send Email",
-    orLabel: "or",
+    description:
+      "Let's keep in touch through my social networks or by sending me a direct message:",
+    formLabels: {
+      name: "Name",
+      email: "Email",
+      message: "Message",
+      send: "Send message",
+      success: "Message sent successfully!",
+      error: "There was an error sending the message.",
+    },
     copyright: "Esteban Rolon. All rights reserved.",
   },
   contact: {
     label: "Contact me",
+    id: "contact",
   },
 };

@@ -26,9 +26,9 @@ export default function Page() {
       <Header
         pages={d.nav}
         contactLabel={d.contact.label}
-        contactLink={`#${d.contact.label}`}
+        contactLink={`#${d.contact.id}`}
       />
-      <div className="flex flex-col items-center mx-6 mt-16" id="home">
+      <div className="flex-1 flex flex-col items-center mx-6 mt-16" id="home">
         <div className="relative w-full max-w-4xl mt-26">
           <div className="fixed top-0 right-0 translate-y-[85dvh] translate-x-38 hover:translate-x-12 z-50 transition-all md:hidden">
             <div className="bg-background/50 backdrop-blur-md backdrop-brightness-125 backdrop-contrast-110 p-4 rounded-full border border-foreground pr-16">
@@ -36,7 +36,11 @@ export default function Page() {
             </div>
           </div>
           <section>
-            <HeroSection description={d.hero.description}>
+            <HeroSection
+              description={d.hero.description}
+              contactLabel={d.contact.label}
+              contactHref={`#${d.contact.id}`}
+            >
               <p className="my-4 max-w-xl text-xl sm:text-2xl font-medium">
                 {d.hero.text}
                 <span className="font-semibold text-accent">
@@ -104,10 +108,10 @@ export default function Page() {
         </div>
       </div>
       <Footer
+        id={d.contact.id}
         title={d.footer.title}
         description={d.footer.description}
-        emailBadge={d.footer.emailBadge}
-        orLabel={d.footer.orLabel}
+        formLabels={d.footer.formLabels}
         copyright={d.footer.copyright}
       />
     </>

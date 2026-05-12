@@ -1,5 +1,6 @@
 export const PROFILE = {
   name: "Esteban Rolon",
+  email: process.env.EMAIL || "contact@reidan.dev",
   role: "Fullstack Developer",
   website: "https://portfolio.reidan.dev",
   profile: "/profile.jpg",

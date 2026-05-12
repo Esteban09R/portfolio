@@ -6,7 +6,7 @@ export const CV_DATA = {
   image: PROFILE.profile,
   role: "Fullstack Developer",
   contact: {
-    email: PRIVATE_PROFILE.email,
+    email: PROFILE.email,
     phone: PRIVATE_PROFILE.phone,
     location: PRIVATE_PROFILE.location,
     website: PROFILE.website.replace("https://", ""),
@@ -21,7 +21,7 @@ export const CV_DATA = {
       role: "Team Leader - Digitization and Payment Operations",
       period: "2025 - Present",
       description:
-        "• Process Optimization (Shadow IT): Developed a logical validation system in Excel that automates the identification of required markings per document. This tool reduced processing time by 50%.\n• Operations Management and Leadership: Coordinate the digitization team, setting daily production goals, training staff, and ensuring quality under banking standards.\n• Interdepartmental Management: Act as a technical liaison with branches for the resolution of transfer errors and operational incident management.\n• Inventory Control: Manage the general inventory database to ensure absolute traceability of physical and digital documents.\n• Integral Management: Execute physical recovery tasks and documentation dispatch, maintaining the department's operational continuity.",
+        "• Process Optimization: Developed a logical validation system in Excel that automates the identification of required markings per document. This tool reduced processing time by 50%.\n• Operations Management and Leadership: Coordinate the digitization team, setting daily production goals, training staff, and ensuring quality under banking standards.\n• Interdepartmental Management: Act as a technical liaison with branches for the resolution of transfer errors and operational incident management.\n• Inventory Control: Manage the general inventory database to ensure absolute traceability of physical and digital documents.\n• Integral Management: Execute physical recovery tasks and documentation dispatch, maintaining the department's operational continuity.",
     },
     {
       company: "Lambaré Cooperative",

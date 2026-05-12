@@ -44,7 +44,7 @@ export default function Projects({
   inDevelopment,
 }: ProjectsProps) {
   return (
-    <div className="group flex flex-col md:flex-row items-stretch w-full max-w-5xl mx-auto bg-primary/10 border border-accent rounded-3xl overflow-hidden mb-16 even:md:flex-row-reverse min-h-[350px]">
+    <div className="group flex flex-col md:flex-row items-stretch w-full max-w-5xl mx-auto bg-primary/10 border border-accent rounded-3xl overflow-hidden mb-16 even:md:flex-row-reverse min-h-[350px] backdrop-blur-xs">
       <div
         className="relative w-full md:w-[40%] h-64 md:h-auto overflow-hidden bg-transparent"
         style={{
@@ -77,7 +77,7 @@ export default function Projects({
 
         {/**links section */}
         <div className="self-end pb-2 pt-8">
-          <span className="flex gap-2 flex-wrap">
+          <span className="flex gap-2 flex-wrap justify-center md:justify-start">
             {inDevelopment && (
               <span className="flex items-center gap-2 italic text-sm px-2 text-foreground/80">
                 {inDevelopment}

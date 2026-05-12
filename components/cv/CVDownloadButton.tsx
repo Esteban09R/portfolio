@@ -5,15 +5,19 @@ import { PROFILE } from "@/constants/profile";
 interface CVDownloadButtonProps {
   lang: "es" | "en";
   label: string;
+  version?: string;
 }
 
 export default function CVDownloadButton({
   lang,
   label,
+  version,
 }: CVDownloadButtonProps) {
+  const versionQuery = version ? `?v=${version}` : '';
+
   return (
     <a
-      href={`/api/cv/download/${lang}`}
+      href={`/api/cv/download/${lang}${versionQuery}`}
       download={`CV_${PROFILE.name.replace(/\s+/g, "_")}_${lang}.pdf`}
       className="
         inline-flex items-center

@@ -17,8 +17,8 @@ export const CV_DATA = {
     "Técnico en Informática con interés en el desarrollo de software y la automatización de procesos. Especializado en encontrar soluciones eficientes a problemas prácticos, optimizar flujos de trabajo y aplicar pensamiento analítico en cada proyecto. Actualmente enfocado en el desarrollo frontend con tecnologías modernas y en fortalecer habilidades como desarrollador.",
   experience: [
     {
-      company: "Banco Continental",
-      role: "Líder de Equipo - Digitalización y Operativa de Pagos",
+      company: "Negocios y Servicios S.A.",
+      role: "Líder de Equipo - Digitalización y Operativo de Pago de Salarios en Banco contiental",
       period: "2025 - Presente",
       description:
         "• Optimización de Procesos: Desarrollé un sistema de validación lógica en Excel que automatiza la identificación de marcaciones requeridas por documento. Esta herramienta redujo el tiempo de proceso en un 50%.\n• Gestión de Operaciones y Liderazgo: Coordino el equipo de digitalización, estableciendo metas diarias de producción, capacitando al personal y asegurando la calidad bajo estándares bancarios.\n• Gestión Interdepartamental: Actúo como enlace técnico con sucursales para la resolución de errores en transferencias y gestión de incidencias operativas.\n• Control de Inventarios: Administro la base de datos de inventario general para garantizar la trazabilidad absoluta de documentos físicos y digitales.\n• Gestión Integral: Ejecuto tareas de recuperación física y despacho de documentación, manteniendo la continuidad operativa del departamento.",
