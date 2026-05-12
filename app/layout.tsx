@@ -41,7 +41,7 @@ export default function RootLayout({
       </head>
       <body className={`${poppins.className} antialiased text-[1rem]`}>
         {children}
-        <div className="bg-grid fixed top-0 right-0 w-full h-full -z-50 border-0 bg-radial-gradient(circle, var(--"></div>
+        <div className="bg-grid fixed top-0 right-0 w-full h-full -z-50"></div>
       </body>
     </html>
   );
