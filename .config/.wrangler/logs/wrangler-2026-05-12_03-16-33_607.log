@@ -1,0 +1,8 @@
+
+--- 2026-05-12T03:16:33.773Z debug
+🪵  Writing logs to "/home/dan/Documents/Workspace/portfolio/.config/.wrangler/logs/wrangler-2026-05-12_03-16-33_607.log"
+---
+
+--- 2026-05-12T03:16:33.773Z debug
+local dev variables file not found at ".dev.vars". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---

@@ -1,0 +1,5 @@
+{
+  "debugPortAddress": "127.0.0.1:37557",
+  "defaultEntrypointService": "assets:rpc-proxy:portfolio-esteban",
+  "userWorkerService": "core:user:portfolio-esteban"
+}
