@@ -10,6 +10,9 @@ interface FooterLabels {
   send: string;
   success: string;
   error: string;
+  namePlaceholder?: string;
+  emailPlaceholder?: string;
+  messagePlaceholder?: string;
 }
 
 interface FooterProps {
@@ -72,6 +75,9 @@ export default function Footer({
             sendLabel={formLabels.send}
             successMessage={formLabels.success}
             errorMessage={formLabels.error}
+            namePlaceholder={formLabels.namePlaceholder}
+            emailPlaceholder={formLabels.emailPlaceholder}
+            messagePlaceholder={formLabels.messagePlaceholder}
           />
         </div>
       </div>

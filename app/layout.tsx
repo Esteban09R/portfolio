@@ -26,6 +26,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <meta name="color-scheme" content="dark" />
+        <meta name="darkreader-lock" content="true" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -39,9 +41,8 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${poppins.className} antialiased text-[1rem]`}>
+      <body className={`${poppins.className} antialiased text-[1rem] bg-grid`}>
         {children}
-        <div className="bg-grid fixed top-0 right-0 w-full h-full -z-50"></div>
       </body>
     </html>
   );

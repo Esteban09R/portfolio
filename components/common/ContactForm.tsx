@@ -11,6 +11,9 @@ interface ContactFormProps {
   sendLabel: string;
   successMessage: string;
   errorMessage: string;
+  namePlaceholder?: string;
+  emailPlaceholder?: string;
+  messagePlaceholder?: string;
 }
 
 export default function ContactForm({
@@ -20,6 +23,9 @@ export default function ContactForm({
   sendLabel,
   successMessage,
   errorMessage,
+  namePlaceholder = "John Doe",
+  emailPlaceholder = "john@example.com",
+  messagePlaceholder = "...",
 }: ContactFormProps) {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">(
     "idle"
@@ -68,7 +74,7 @@ export default function ContactForm({
             required
             type="text"
             name="name"
-            placeholder="John Doe"
+            placeholder={namePlaceholder}
             className="bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 outline-none focus:border-accent/50 focus:bg-white/10 transition-all"
           />
         </div>
@@ -80,7 +86,7 @@ export default function ContactForm({
             required
             type="email"
             name="email"
-            placeholder="john@example.com"
+            placeholder={emailPlaceholder}
             className="bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 outline-none focus:border-accent/50 focus:bg-white/10 transition-all"
           />
         </div>
@@ -93,7 +99,7 @@ export default function ContactForm({
           required
           name="message"
           rows={4}
-          placeholder="..."
+          placeholder={messagePlaceholder}
           className="bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 outline-none focus:border-accent/50 focus:bg-white/10 transition-all resize-none"
         ></textarea>
       </div>
