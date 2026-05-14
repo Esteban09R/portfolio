@@ -30,6 +30,7 @@ export default function ContactForm({
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">(
     "idle"
   );
+  const [serverError, setServerError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -40,8 +41,10 @@ export default function ContactForm({
 
     if (result.success) {
       setStatus("success");
+      setServerError(null);
     } else {
       setStatus("error");
+      setServerError(result.error || errorMessage);
     }
   };
 
@@ -111,7 +114,7 @@ export default function ContactForm({
         {status === "sending" ? "..." : sendLabel}
       </button>
       {status === "error" && (
-        <p className="text-red-400 text-xs text-center">{errorMessage}</p>
+        <p className="text-red-400 text-xs text-center">{serverError || errorMessage}</p>
       )}
     </form>
   );

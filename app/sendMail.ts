@@ -9,7 +9,7 @@ export async function sendEmail(formData: FormData) {
     console.error("RESEND_API_KEY is missing in production environment");
     return {
       success: false,
-      error: "Service configuration error. Please try again later.",
+      error: "RESEND_API_KEY is missing in production environment (check Secrets)",
     };
   }
 
@@ -23,7 +23,7 @@ export async function sendEmail(formData: FormData) {
 
   if (!ownerEmail || !fromEmail) {
     console.error("Email configuration missing (EMAIL or FROM_EMAIL)");
-    return { success: false, error: "Server configuration missing." };
+    return { success: false, error: `Email config missing. ownerEmail: ${!!ownerEmail}, fromEmail: ${!!fromEmail}` };
   }
 
   try {
@@ -48,7 +48,7 @@ export async function sendEmail(formData: FormData) {
 
     if (ownerError) {
       console.error("Resend owner notification error:", ownerError);
-      return { success: false, error: "Failed to deliver message." };
+      return { success: false, error: `Failed to deliver message: ${ownerError.message || JSON.stringify(ownerError)}` };
     }
 
     // 2. Send confirmation to the user (optional, might fail if domain not verified)
@@ -85,7 +85,7 @@ export async function sendEmail(formData: FormData) {
     // Return only serializable data
     return {
       success: false,
-      error: typeof err === "string" ? err : err.message || "Unknown error",
+      error: `Exception: ${typeof err === "string" ? err : err.message || "Unknown error"}`,
     };
   }
 }
