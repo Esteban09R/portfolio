@@ -1,6 +1,6 @@
 "use server";
 import { Resend } from "resend";
-import { PRIVATE_PROFILE } from "@/constants/private-profile";
+import { getPrivateProfile } from "@/constants/private-profile";
 
 export async function sendEmail(formData: FormData) {
   const apiKey = process.env.RESEND_API_KEY;
@@ -18,8 +18,9 @@ export async function sendEmail(formData: FormData) {
   const email = formData.get("email") as string;
   const message = formData.get("message") as string;
 
-  const ownerEmail = PRIVATE_PROFILE.email;
-  const fromEmail = PRIVATE_PROFILE.fromEmail;
+  const profile = getPrivateProfile();
+  const ownerEmail = profile.email;
+  const fromEmail = profile.fromEmail;
 
   if (!ownerEmail || !fromEmail) {
     console.error("Email configuration missing (EMAIL or FROM_EMAIL)");
