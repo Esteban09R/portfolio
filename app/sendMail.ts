@@ -1,6 +1,6 @@
 "use server";
 import { Resend } from "resend";
-import { PROFILE } from "@/constants/profile";
+import { PRIVATE_PROFILE } from "@/constants/private-profile";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -8,13 +8,14 @@ export async function sendEmail(formData: FormData) {
   const name = formData.get("name") as string;
   const email = formData.get("email") as string;
   const message = formData.get("message") as string;
+  const fromEmail = PRIVATE_PROFILE.fromEmail;
 
   try {
     const { data, error } = await resend.emails.send({
-      from: "Contacto <contact@reidan.dev>",
+      from: `Contacto <${fromEmail}>`,
       to: [email],
       subject: `Hola ${name}, he recibido tu mensaje`,
-      replyTo: "contact@reidan.dev",
+      replyTo: fromEmail,
       html: `
         <div style="background-color: #180e0d; color: #f0dedc; font-family: sans-serif; padding: 40px; border-radius: 20px; max-width: 600px; margin: auto; border: 1px solid rgba(231, 60, 41, 0.1);">
           <h1 style="color: #e73c29; font-size: 24px; margin-bottom: 20px;">Hola ${name},</h1>
