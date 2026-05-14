@@ -1,5 +1,5 @@
 import { PROFILE } from "@/constants/profile";
-import { PRIVATE_PROFILE } from "@/constants/private-profile";
+import { getPrivateProfile } from "@/constants/private-profile";
 
 export const CV_DATA = {
   name: PROFILE.name,
@@ -7,8 +7,8 @@ export const CV_DATA = {
   role: "Fullstack Developer",
   contact: {
     email: PROFILE.email,
-    phone: PRIVATE_PROFILE.phone,
-    location: PRIVATE_PROFILE.location,
+    phone: getPrivateProfile().phone,
+    location: getPrivateProfile().location,
     website: PROFILE.website.replace("https://", ""),
     linkedin: PROFILE.social.linkedin,
     github: PROFILE.social.github,
